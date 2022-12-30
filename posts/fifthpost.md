@@ -1,0 +1,36 @@
+---
+title: Variable Playback Speed for Web Video
+description: "Using Javascript to control video playback."
+date: "2022-12-20T23:46:37.121Z"
+tags: [ "Javascript", "Web Development" ]
+layout: layouts/post.njk
+---
+One of the most desired features for educational video content - particularly recorded lecture content - is the ability to speed up playback to 1.2x or 1.4x normal speed. Now, you can easily add this feature to your video website, with a few caveats.
+
+When you increase playback speed, it turns out that it's still quite listenable, and the quicker pace can even enhance the experience. Chit chat, pauses, um's and ah's and other delays that slip by unnoticed when you're live in the room face-to-face with the speaker become unbearable time-wasters when you're watching a recording on your own time.
+
+There used to be two options for enabling this. On the client side, third-party products installed directly by end users, like Encounce's MySpeed plugin, were the way to do it.
+
+On the server side, you could encode the video with the faster timeline baked in, and let the user switch streams at will. Bloggingheads.tv uses this method on most of its videos.
+
+But now, HTML5 video playback offers the same capability (at least on some browsers). Let's take a look at an example. (You'll need to use Chrome, Safari, or IE9 for this example to work - Firefox (at least as of version 8) does not yet support this.)
+
+The key is the &lt;video&gt; element's playbackRate property. Normal playback speed is expressed as a floating point number: 1.0. Accordingly, 2.0 is double speed, 0.5 is half speed.
+
+Here's a code sample for the links above the video shown below:
+
+```javascript
+<script type="text/javascript">
+	function speed(x){
+			var myVid=document.getElementById("streamDiv_video");
+		myVid.playbackRate=x;
+		$('#pbrate').html(x);
+	}
+</script>
+```
+...and then the HTML...
+```html
+	<a href="javascript:speed(0.5)">.5x</a>
+	<a href="javascript:speed(1.0)">1x</a>
+	<a href="javascript:speed(1.2)">1.2x</a>
+````
