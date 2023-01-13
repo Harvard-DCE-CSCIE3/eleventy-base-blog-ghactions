@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Playback Speed for Web Video</title>
+    <meta name="description" content="Using Javascript to control video playback.">
+
+    <link rel="stylesheet" href="/eleventy-base-blog/css/index.css">
+    <link rel="stylesheet" href="/eleventy-base-blog/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" href="/eleventy-base-blog/css/prism-diff.css">
+    <link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="Your Blog Name">
+    <link rel="alternate" href="/eleventy-base-blog/feed/feed.json" type="application/json" title="Your Blog Name">
+  </head>
+  <body>
+    <header>
+      <h1 class="home"><a href="/eleventy-base-blog/">Your Blog Name</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/eleventy-base-blog/">Home</a></li>
+        <li class="nav-item"><a href="/eleventy-base-blog/posts/">Archive</a></li>
+        <li class="nav-item"><a href="/eleventy-base-blog/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main class="tmpl-post">
+
+      <!-- Delete this message -->
+      <div class="infobox">
+        <ol>
+          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
+          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
+          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
+        </ol>
+        <p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+      </div>
+      <!-- Stop deleting -->
+
+      <h1>Variable Playback Speed for Web Video</h1>
+
+<time datetime="2022-12-20">20 Dec 2022</time>
+<a href="/eleventy-base-blog/tags/javascript/" class="post-tag">Javascript</a>
+<a href="/eleventy-base-blog/tags/web-development/" class="post-tag">Web Development</a>
+
+<p>One of the most desired features for educational video content - particularly recorded lecture content - is the ability to speed up playback to 1.2x or 1.4x normal speed. Now, you can easily add this feature to your video website, with a few caveats.</p>
+<p>When you increase playback speed, it turns out that it's still quite listenable, and the quicker pace can even enhance the experience. Chit chat, pauses, um's and ah's and other delays that slip by unnoticed when you're live in the room face-to-face with the speaker become unbearable time-wasters when you're watching a recording on your own time.</p>
+<p>There used to be two options for enabling this. On the client side, third-party products installed directly by end users, like Encounce's MySpeed plugin, were the way to do it.</p>
+<p>On the server side, you could encode the video with the faster timeline baked in, and let the user switch streams at will. <a href="http://Bloggingheads.tv">Bloggingheads.tv</a> uses this method on most of its videos.</p>
+<p>But now, HTML5 video playback offers the same capability (at least on some browsers). Let's take a look at an example. (You'll need to use Chrome, Safari, or IE9 for this example to work - Firefox (at least as of version 8) does not yet support this.)</p>
+<p>The key is the &lt;video&gt; element's playbackRate property. Normal playback speed is expressed as a floating point number: 1.0. Accordingly, 2.0 is double speed, 0.5 is half speed.</p>
+<p>Here's a code sample for the links above the video shown below:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span><br>	<span class="token keyword">function</span> <span class="token function">speed</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>			<span class="token keyword">var</span> myVid<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"streamDiv_video"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		myVid<span class="token punctuation">.</span>playbackRate<span class="token operator">=</span>x<span class="token punctuation">;</span><br>		<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#pbrate'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p>...and then the HTML...</p>
+<pre class="language-html"><code class="language-html">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:speed(0.5)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>.5x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:speed(1.0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:speed(1.2)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1.2x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+
+<hr>
+<ul><li>Previous: <a href="/eleventy-base-blog/posts/fourthpost/">This is my fourth post.</a></li>
+</ul>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /eleventy-base-blog/posts/fifthpost/ -->
+  </body>
+</html>
