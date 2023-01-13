@@ -129,7 +129,8 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data",
       //output: "_site"
-      output: "docs" // try this to see what happens if we build to docs and publish Pages on this path
+      output: "_site" // try this to see what happens if we build to docs and publish Pages on this path
+                      //chanage back to _site for actions method
     }
   };
 };
