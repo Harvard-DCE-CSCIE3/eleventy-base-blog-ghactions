@@ -17,67 +17,72 @@
   </url>
   
   <url>
-    <loc>https://example.com/eleventy-base-blog/posts/fourthpost/</loc>
-    <lastmod>2018-09-30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/eleventy-base-blog/posts/fifthpost/</loc>
     <lastmod>2022-12-20</lastmod>
   </url>
   
   <url>
+    <loc>https://example.com/eleventy-base-blog/posts/fourthpost/</loc>
+    <lastmod>2023-01-28</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/eleventy-base-blog/about/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/posts/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/page-list/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/tags/</loc>
-    <lastmod>2023-01-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/eleventy-base-blog/tags/another-tag/</loc>
-    <lastmod>2023-01-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/eleventy-base-blog/tags/second-tag/</loc>
-    <lastmod>2023-01-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/eleventy-base-blog/tags/number-2/</loc>
-    <lastmod>2023-01-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/eleventy-base-blog/tags/posts-with-two-tags/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/tags/javascript/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/eleventy-base-blog/tags/web-development/</loc>
-    <lastmod>2023-01-18</lastmod>
+    <lastmod>2023-01-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/eleventy-base-blog/tags/another-tag/</loc>
+    <lastmod>2023-01-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/eleventy-base-blog/tags/jamstack/</loc>
+    <lastmod>2023-01-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/eleventy-base-blog/tags/number-2/</loc>
+    <lastmod>2023-01-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/eleventy-base-blog/tags/second-tag/</loc>
+    <lastmod>2023-01-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/eleventy-base-blog/tags/posts-with-two-tags/</loc>
+    <lastmod>2023-01-29</lastmod>
   </url>
 </urlset>
